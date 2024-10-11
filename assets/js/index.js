@@ -6,84 +6,104 @@ let predictions = []; // Store predictions in a variable
 // Example labelDetails object for additional information
 const labelDetails = {
     "Wasp": {
+        id: 1,
         explanation: "Ang mga wasps ay karaniwang mga predatoryong insekto.",
-        image: "assets/images/pest/wasp.jpg"
+        image: "../../assets/images/pest/wasp.jpg"
     },
     "Weevil": {
+        id: 2,
         explanation: "Ang mga weevil ay mga beetle na kilala sa kanilang mahahabang pangil.",
-        image: "assets/images/pest/weevil.jpg"
+        image: "../../assets/images/pest/weevil.jpg"
     },
     "Snail": {
+        id: 3,
         explanation: "Ang mga suso ay mabagal na molusko na madalas sumisira sa mga halaman.",
-        image: "assets/images/pest/snail.jpg"
+        image: "../../assets/images/pest/snail.jpg"
     },
     "Moth": {
+        id: 4,
         explanation: "Ang mga moth ay maaaring makapinsala sa mga tela at nakaimbak na produkto.",
-        image: "assets/images/pest/moth.jpg"
+        image: "../../assets/images/pest/moth.jpg"
     },
     "Slug": {
+        id: 5,
         explanation: "Ang mga slug ay katulad ng mga suso ngunit walang shell.",
-        image: "assets/images/pest/slug.jpg"
+        image: "../../assets/images/pest/slug.jpg"
     },
     "Earwig": {
+        id: 6,
         explanation: "Ang mga earwig ay nocturnal na insekto na kumakain ng mga halaman.",
-        image: "assets/images/pest/earwig.jpg"
+        image: "../../assets/images/pest/earwig.jpg"
     },
     "Grasshopper": {
+        id: 7 ,
         explanation: "Ang mga grasshoppers ay mga insekto na kumakain ng halaman.",
-        image: "assets/images/pest/grasshopper.jpg"
+        image: "../../assets/images/pest/grasshopper.jpg"
     },
     "Caterpillar": {
+        id: 8,
         explanation: "Ang mga caterpillar ay larvae ng mga paru-paro at moth.",
-        image: "assets/images/pest/caterpillar.jpg"
+        image: "../../assets/images/pest/caterpillar.jpg"
     },
     "Earthworm": {
+        id: 9,
         explanation: "Ang mga earthworm ay kapaki-pakinabang sa lupa para sa pag-aerate at decomposition.",
-        image: "assets/images/pest/earthworms.jpg"
+        image: "../../assets/images/pest/earthworms.jpg"
     },
     "Bettle": {
+        id: 10,
         explanation: "Ang mga beetle ay maaaring makasira sa mga halaman sa pamamagitan ng pagkain ng mga bahagi nito.",
-        image: "assets/images/pest/beetle.jpg"
+        image: "../../assets/images/pest/beetle.jpg"
     },
     "Ants": {
+        id: 11,
         explanation: "Ang mga langgam ay sosyal na insekto na maaaring magdulot ng abala.",
-        image: "assets/images/pest/ants.jpg"
+        image: "../../assets/images/pest/ants.jpg"
     },
     "Bees": {
+        id: 12,
         explanation: "Ang mga bubuyog ay mahalagang pollinators ngunit maaaring maging agresibo.",
-        image: "assets/images/pest/bees.jpg"
+        image: "../../assets/images/pest/bees.jpg"
     },
     "Borers": {
+        id: 13,
         explanation: "Ang mga borer ay mga larvae na sumusubok pumasok sa mga puno.",
-        image: "assets/images/pest/borers.jpg"
+        image: "../../assets/images/pest/borers.jpg"
     },
     "Cane Grubs": {
+        id: 14,
         explanation: "Ang mga cane grubs ay larvae ng beetles na kumakain sa ugat ng tubo.",
-        image: "assets/images/pest/cane_grubs.jpg"
+        image: "../../assets/images/pest/cane_grubs.jpg"
     },
     "Corn Earworm": {
+        id: 15,
         explanation: "Ang mga corn earworms ay caterpillar na kumakain sa mga tenga ng mais.",
-        image: "assets/images/pest/corn_earworm.jpg"
+        image: "../../assets/images/pest/corn_earworm.jpg"
     },
     "Corn Leaf Aphid": {
+        id: 16,
         explanation: "Ang mga corn leaf aphids ay sumususo ng katas mula sa mga halaman ng mais.",
-        image: "assets/images/pest/corn_leaf_aphid.jpg"
+        image: "../../assets/images/pest/corn_leaf_aphid.jpg"
     },
     "Cutworms": {
+        id: 16,
         explanation: "Ang mga cutworms ay caterpillar na kumakain sa mga batang halaman.",
-        image: "assets/images/pest/cutworms.jpg"
+        image: "../../assets/images/pest/cutworms.jpg"
     },
     "Early Shoot Borer": {
+        id: 17,
         explanation: "Ang mga early shoot borers ay umaatake sa mga batang shoots ng tubo.",
-        image: "assets/images/pest/early_shoot_borer.jpg"
+        image: "../../assets/images/pest/early_shoot_borer.jpg"
     },
     "Fall Armyworm": {
+        id: 18,
         explanation: "Ang mga fall armyworms ay caterpillar na sumisira sa mga tanim tulad ng mais.",
-        image: "assets/images/pest/fall_armyworm.jpg"
+        image: "../../assets/images/pest/fall_armyworm.jpg"
     },
     "Undefined": {
+        id: 0,
         explanation: "Ang peste ay hindi matukoy. Siguraduhin na malinaw ang larawan.",
-        image: "assets/images/pest/undefined.jpg"
+        image: "../../assets/images/pest/undefined.jpg"
     }
 };
 
@@ -91,8 +111,8 @@ const labelDetails = {
 async function init() {
     if (isRunning) return; // Prevent reinitialization if already running
 
-    const modelURL = URL + "model.json";
-    const metadataURL = URL + "metadata.json";
+    const modelURL = URL + "../../../model/model.json";
+    const metadataURL = URL + "../../../model/metadata.json";
 
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
@@ -149,6 +169,7 @@ function showHighestPrediction() {
     const details = labelDetails[highestPrediction.label] || {};
     const explanation = details.explanation || "No additional information available.";
     const image = details.image || "";
+    const id = details.id || "";
 
     // Set modal content
     const modalBodyContent = document.getElementById("modal-body-content");
@@ -160,7 +181,7 @@ function showHighestPrediction() {
 
     // Update the "Solution" button href with the highestPrediction.label
     const solutionButton = document.getElementById("solution-button");
-    solutionButton.href = `view/solution.php?PestName=${encodeURIComponent(highestPrediction.label)}`;
+    solutionButton.href = `solution.php?PestID=${encodeURIComponent(id)}`;
     solutionButton.target = "_self"; // Ensures the link opens in the same tab
 
     // Show the modal
