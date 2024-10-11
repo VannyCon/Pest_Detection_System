@@ -27,9 +27,10 @@
 
         .center-content {
             width: 100%;
-            max-width: 600px;
+            max-width: 300px;
             text-align: center;
         }
+        
 
         #webcam-container {
             width: 100%;
@@ -58,13 +59,18 @@
             #start-button, #stop-button {
                 width: auto; /* Full width on mobile */
             }
+            .center-content {
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container-fluid content mt-2 mt-md-5 mb-5">
-        <div class="container center-content text-center my-5">
+        <div class="container center-content text-center my-5 ">
             <img src="../../assets/images/icon.png" alt="" width="150">
             
             <div class="text-center px-2 py-0 text-white my-1 my-md-5 w-100">
@@ -72,12 +78,17 @@
             </div>
             
             <div id="webcam-container" class="rounded"></div>
-            
-            <div class="p-2 text-center">
-                <!-- Button with responsive width -->
-                <button id="start-button" type="button" class="btn btn-primary px-5 py-2" onclick="init()">Start</button>
-                <button id="stop-button" type="button" class="btn btn-danger px-5 py-2" onclick="stopWebcam()" style="display: none;">Capture</button>
+            <div class="d-flex justify-content-center">
+                <div class="p-2 text-center  w-100" >
+                    <!-- Button with responsive width -->
+                    <button id="start-button" type="button" class="btn btn-primary w-100 py-2 w-100" onclick="init()">Start</button>
+                    <button id="stop-button" type="button" class="btn btn-danger w-100 py-2 w-100" onclick="stopWebcam()" style="display: none;">Capture</button>
+                    <div class="pt-2 text-center">
+                        <a href="history.php" class="btn btn-outline-info text-decoration-none w-100 py-2 w-100">History</a>
+                    </div>
+                </div>
             </div>
+            
         </div>
 
         <!-- Modal -->
@@ -95,14 +106,14 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <a id="solution-button" class="btn btn-success" href="#" target="_blank">Solution</a>
+                        <a id="solution-button" class="btn btn-success solution-link" href="#" target="_blank">Solution</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer style="background-color: #232d3b;" >
+    <footer style="background-color: #232d3b;">
         <div class="text-center">
             <strong class="text-white">Note:</strong>
             <p class="text-white font-weight-light">Click 'Start', place your camera to the pest then, click 'Detect', to know more information, click 'Solution' button.</p>    
@@ -114,5 +125,39 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="../../assets/js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const solutionLinks = document.querySelectorAll('.solution-link');
+
+            solutionLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default link behavior
+
+                    const pestID = this.getAttribute('data-id'); // Get the PestID from the data attribute
+                    const date = new Date().toLocaleString(); // Get the current date and time
+                    const description = "Description for Pest ID " + pestID; // Create a description (customize as needed)
+
+                    // Create a history entry
+                    const historyEntry = {
+                        pestID: pestID,
+                        date: date,
+                        description: description,
+                    };
+
+                    // Get existing history from local storage or initialize it
+                    let history = JSON.parse(localStorage.getItem('history')) || [];
+
+                    // Add the new entry to the history
+                    history.push(historyEntry);
+
+                    // Save updated history to local storage
+                    localStorage.setItem('history', JSON.stringify(history));
+
+                    // Redirect to the solution page
+                    window.location.href = this.href; // Redirect to the solution link
+                });
+            });
+        });
+    </script>
 </body>
 </html>

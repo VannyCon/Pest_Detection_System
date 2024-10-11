@@ -184,6 +184,23 @@ function showHighestPrediction() {
     solutionButton.href = `solution.php?PestID=${encodeURIComponent(id)}`;
     solutionButton.target = "_self"; // Ensures the link opens in the same tab
 
+    // Save to local storage before redirecting
+    const date = new Date().toLocaleString(); // Get the current date and time
+    const historyEntry = {
+        pestID: id,
+        date: date,
+        description: explanation,
+    };
+
+    // Get existing history from local storage or initialize it
+    let history = JSON.parse(localStorage.getItem('history')) || [];
+
+    // Add the new entry to the history
+    history.push(historyEntry);
+
+    // Save updated history to local storage
+    localStorage.setItem('history', JSON.stringify(history));
+
     // Show the modal
     $('#predictionModal').modal('show');
 }
