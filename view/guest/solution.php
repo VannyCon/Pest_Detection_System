@@ -1,9 +1,11 @@
 <?php 
+// THIS PART IS THE RESULT OF RIDERECTION AFTER SHOW THE RESULT WHERE THIS PART NEED THE PEST ID WHICH USE TO GET THE OR IDENTIFY THE PEST NAME,INFORMATION AND SOLUTION
 require_once('../../controller/PestDataController.php');
 $pest = new PestData();
 
 $pestID = $_GET['PestID'];
 
+// THIS WILL SHOW IF 
 $pestInfo = $pest->getPestById($pestID);
 
 // Check if the query was successful and returned a result
@@ -104,6 +106,7 @@ if ($pestInfo && is_array($pestInfo)) {
     <!-- Include ResponsiveVoice.js -->
 
 <script>
+    // THIS PART IS TO FORMAT THE TEST EX. 1. 2. 3. WILL ARRANGE VERTICALLY
     function formatSolution() {
         const solutionElement = document.getElementById('solution');
         if (!solutionElement) return;
@@ -124,9 +127,12 @@ if ($pestInfo && is_array($pestInfo)) {
         solutionElement.innerHTML = formattedHTML;
     }
 
+    // Function to play TTS TO CONVERT THOSE SOLUTION AND INFORMATION TO SOUND
     // Run the formatting function when the page loads
     document.addEventListener('DOMContentLoaded', formatSolution);
     // Pronunciation dictionary
+
+    // TO OPTIMIZE FILIPINO VOICE
     const pronunciationDict = {
         'ng': 'nang',
         'mga': 'mga',

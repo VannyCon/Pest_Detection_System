@@ -3,6 +3,7 @@ require_once("../../connection/config.php");
 require_once("../../connection/connection.php");
 
 class PestData extends config {
+    //GET ALL THE ALL PEST INFORMATION THIS PART IS RESPONSIBLE TO SHOW INFORMATION IN TABLE
     public function getAllPest() {
         try {
             $query = "SELECT `id`, `pest_name`, `pest_information`, `pest_solution`, `pest_imagepath` FROM `tbl_pestdata` WHERE 1";
@@ -14,6 +15,7 @@ class PestData extends config {
         }
     }
 
+    // GET THE PEST BY ITS OWN ID
     public function getPestById($id) {
         try {
                 $query = "SELECT `id`, `pest_name`, `pest_information`, `pest_solution`, `pest_imagepath` FROM `tbl_pestdata` WHERE `id` = :id";
@@ -28,6 +30,7 @@ class PestData extends config {
     }
 
 
+    // THIS IS THE FUNCTION USE TO UPDATE THE INFORMATION, SOLUTION AND NAME OF PEST
     public function update($id, $pest_name, $pest_information, $pest_solution) {
         try {
             // Define the query with placeholders for updating an existing record

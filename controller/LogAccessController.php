@@ -1,4 +1,6 @@
 <?php 
+
+    //////////////////// LOGIN /////////////////////////
     session_start();
     require_once("connection/config.php");
     require_once("connection/connection.php");
@@ -8,6 +10,8 @@
         header("Location: view/admin/index.php");
         exit();
     }
+
+    /// THIS IS THE LOGIN CLASS
     class LoginAccess extends config {
         public function login($username, $password){
             try {
@@ -35,17 +39,23 @@
         }
         
     }
-    // Instantiate the class to get nursery owners
+
+
+    // Instantiate the class to GET THE LOGIN
     $access = new LoginAccess();
+
+    // TO CHECK LOGIN FORM INPUTS
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'login') {
         // Retrieve form input
         $username = $access->clean('username', 'post');
         $password = $access->clean('password', 'post');
 
         if (!empty($username) && !empty($password)) { 
+
+            // USERNAME AND PASSWORD PASS TO LOGIN FUNCTION FROM LOGINACESS
             $status = $access->login($username,$password);
             if($status == true){
-                header("Location: view/pages/admin/index.php");
+                header("Location: view/admin/index.php");
                 exit();
             }else{
                 header("Location: index.php?error=1");

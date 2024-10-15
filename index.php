@@ -1,4 +1,5 @@
 <?php 
+    // IMPORT LOGINCONTROLLER WHERE HANDLE FUNCTION TO LOGIN
     include_once('controller/LogAccessController.php');
 ?>
 <!DOCTYPE html>

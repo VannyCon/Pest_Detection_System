@@ -3,6 +3,7 @@ require_once('../../controller/PestDataController.php');
 $pest = new PestData();
 $pestDatas = $pest->getAllPest();
 
+// Handle form submission for updating a pest data
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] == 'update') {
     $id = $_POST['id'];
     $pest_name = $_POST['pest_name'];

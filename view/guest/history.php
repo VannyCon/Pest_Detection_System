@@ -1,3 +1,5 @@
+<!-- ALL THE HISTORY IS SAVED LOCALLY TO YOUR DEVICE BROWSER(CHORME, OPERA, BRAVE ETC.)  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -103,6 +103,8 @@
                     </div>
                     <div class="modal-body" id="modal-body-content" style="color: white;">
                         <!-- Prediction content will be injected here -->
+
+                        <!-- LOGIC IS LOCATED IN ASSETS/JS/ -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -124,8 +126,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <!--  THIS IS THE PART WHERE LOCATED THE LOGIC TO SCAN THE PEST IT USE TENSORFLOW LITE TO PERFORM AND TRAIN BY TEACHABLE MACHINE BY GOOGLE -->
     <script type="text/javascript" src="../../assets/js/index.js"></script>
+
+
+
     <script>
+        //  THIS PART IS THE JS RESPONSIBLE WHERE IF YOU MAKE A  SCAN THEN CHECK THE SOLUTION THE SOLUTION THAT GIVEN WILL BE SAVE TO HISTORY.PHP WHICH IS STORED IN YOU DEVICE BROWSER
         document.addEventListener('DOMContentLoaded', function () {
             const solutionLinks = document.querySelectorAll('.solution-link');
 

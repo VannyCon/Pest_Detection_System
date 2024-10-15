@@ -1,8 +1,9 @@
 const URL = "model/";
 let model, webcam, maxPredictions;
 let isRunning = false;
-let predictions = []; // Store predictions in a variable
 
+let predictions = []; // Store predictions in a variable
+// THIS IS THE PART OF JS WHERE TO GIVE YOU A PARTIAL DATA AFTER SCAN
 // Example labelDetails object for additional information
 const labelDetails = {
     "Wasp": {
@@ -107,10 +108,11 @@ const labelDetails = {
     }
 };
 
-
+// THIS PART IS TO INITALIZE THE TENSORFLOW LITE SCANNING
 async function init() {
     if (isRunning) return; // Prevent reinitialization if already running
 
+    //LOCATION OF MODEL WHICH IS THE OUTPUT OF THE RESULT OF TRAINING MODEL IN TEACHABLE MACHINE
     const modelURL = URL + "../../../model/model.json";
     const metadataURL = URL + "../../../model/metadata.json";
 
@@ -142,6 +144,7 @@ async function loop() {
     }
 }
 
+// RETURN YOU A RESULT OF SCANNING
 async function predict() {
     const prediction = await model.predict(webcam.canvas);
     predictions = prediction.map(p => ({
@@ -150,6 +153,7 @@ async function predict() {
     }));
 }
 
+// THIS IS THE LOGIC WHERE IF YOU CLICK THE START IT WILL HIDE  THEN THE CAPTURE SHOW
 function stopWebcam() {
     isRunning = false;
     if (webcam) {
@@ -160,6 +164,7 @@ function stopWebcam() {
     showHighestPrediction();
 }
 
+/// THIS IS THE PART WILL PERFORM A IDENTIFICATION
 function showHighestPrediction() {
     if (predictions.length === 0) return;
 
