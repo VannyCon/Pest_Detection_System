@@ -6,6 +6,11 @@ let predictions = []; // Store predictions in a variable
 // THIS IS THE PART OF JS WHERE TO GIVE YOU A PARTIAL DATA AFTER SCAN
 // Example labelDetails object for additional information
 const labelDetails = {
+    "Undefined": {
+        id: 0,
+        explanation: "Ang peste ay hindi matukoy. Siguraduhin na malinaw ang larawan.",
+        image: "../../assets/images/pest/undefined.jpg"
+    },
     "Wasp": {
         id: 1,
         explanation: "Ang mga wasps ay karaniwang mga predatoryong insekto.",
@@ -101,11 +106,6 @@ const labelDetails = {
         explanation: "Ang mga fall armyworms ay caterpillar na sumisira sa mga tanim tulad ng mais.",
         image: "../../assets/images/pest/fall_armyworm.jpg"
     },
-    "Undefined": {
-        id: 0,
-        explanation: "Ang peste ay hindi matukoy. Siguraduhin na malinaw ang larawan.",
-        image: "../../assets/images/pest/undefined.jpg"
-    }
 };
 
 // THIS PART IS TO INITALIZE THE TENSORFLOW LITE SCANNING

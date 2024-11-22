@@ -40,6 +40,14 @@
             const history = JSON.parse(localStorage.getItem('history')) || [];
             const historyList = document.getElementById('history-list');
 
+            
+            // Sort history array in descending order by date
+            history.sort((a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return dateB - dateA; // For descending order
+            });
+            
             // Populate the history list
             history.forEach(entry => {
                 const row = document.createElement('tr');
