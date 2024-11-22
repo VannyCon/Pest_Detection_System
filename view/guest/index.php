@@ -249,7 +249,9 @@
         // Start video stream
         startBtn.addEventListener("click", async () => {
             try {
-                stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                stream = await navigator.mediaDevices.getUserMedia({ 
+                    video: { facingMode: "environment" } // This ensures the rear camera is used
+                });
                 videoFeed.srcObject = stream;
                 videoFeed.style.display = "block";
                 captureBtn.style.display = "inline-block";
