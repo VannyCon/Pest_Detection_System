@@ -190,7 +190,7 @@
                 explanation: "Ang mga langgam ay sosyal na insekto na maaaring magdulot ng abala.",
                 image: "../../assets/images/pest/ants.jpg"
             },
-            "bees": {
+            "bee": {
                 id: 12,
                 explanation: "Ang mga bubuyog ay mahalagang pollinators ngunit maaaring maging agresibo.",
                 image: "../../assets/images/pest/bees.jpg"
@@ -287,7 +287,7 @@
             loadingIndicator.style.display = "block";
 
             try {
-                const response = await fetch("https://pest-detection-api.vercel.app/upload", {
+                const response = await fetch("https://caps-zeta.vercel.app/upload", {
                     method: "POST",
                     body: formData,
                     mode: "cors",
@@ -298,6 +298,7 @@
                 }
 
                 const result = await response.json();
+
 
                   // Access the class field from the predictions array
                     const detectedClass = result.predictions[0]?.class || "Undefined"; // Default to "Undefined" if no pests are detected

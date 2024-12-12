@@ -36,7 +36,7 @@ const labelDetails = {
         explanation: "Ang mga slug ay katulad ng mga suso ngunit walang shell.",
         image: "../../assets/images/pest/slug.jpg"
     },
-    "Earwig": {
+    "Earwigs": {
         id: 6,
         explanation: "Ang mga earwig ay nocturnal na insekto na kumakain ng mga halaman.",
         image: "../../assets/images/pest/earwig.jpg"
@@ -46,17 +46,17 @@ const labelDetails = {
         explanation: "Ang mga grasshoppers ay mga insekto na kumakain ng halaman.",
         image: "../../assets/images/pest/grasshopper.jpg"
     },
-    "Caterpillar": {
+    "Catterpillar": {
         id: 8,
         explanation: "Ang mga caterpillar ay larvae ng mga paru-paro at moth.",
         image: "../../assets/images/pest/caterpillar.jpg"
     },
-    "Earthworm": {
+    "Earthworms": {
         id: 9,
         explanation: "Ang mga earthworm ay kapaki-pakinabang sa lupa para sa pag-aerate at decomposition.",
         image: "../../assets/images/pest/earthworms.jpg"
     },
-    "Bettle": {
+    "Bettles": {
         id: 10,
         explanation: "Ang mga beetle ay maaaring makasira sa mga halaman sa pamamagitan ng pagkain ng mga bahagi nito.",
         image: "../../assets/images/pest/beetle.jpg"
@@ -101,7 +101,7 @@ const labelDetails = {
         explanation: "Ang mga early shoot borers ay umaatake sa mga batang shoots ng tubo.",
         image: "../../assets/images/pest/early_shoot_borer.jpg"
     },
-    "Fall Armyworm": {
+    "Fall armyworm": {
         id: 18,
         explanation: "Ang mga fall armyworms ay caterpillar na sumisira sa mga tanim tulad ng mais.",
         image: "../../assets/images/pest/fall_armyworm.jpg"
