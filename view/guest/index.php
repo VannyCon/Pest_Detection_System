@@ -129,108 +129,108 @@
 
 
         // Example labelDetails object for additional information
-        const  labelDetails = {
-            "Undefined": {
-                id: 0,
-                explanation: "Ang peste ay hindi matukoy. Siguraduhin na malinaw ang larawan.",
-                image: "../../assets/images/pest/undefined.jpg"
-            },
-            "wasp": {
-                id: 1,
-                explanation: "Ang mga wasps ay karaniwang mga predatoryong insekto.",
-                image: "../../assets/images/pest/wasp.jpg"
-            },
-            "weevil": {
-                id: 2,
-                explanation: "Ang mga weevil ay mga beetle na kilala sa kanilang mahahabang pangil.",
-                image: "../../assets/images/pest/weevil.jpg"
-            },
-            "snail": {
-                id: 3,
-                explanation: "Ang mga suso ay mabagal na molusko na madalas sumisira sa mga halaman.",
-                image: "../../assets/images/pest/snail.jpg"
-            },
-            "moth": {
-                id: 4,
-                explanation: "Ang mga moth ay maaaring makapinsala sa mga tela at nakaimbak na produkto.",
-                image: "../../assets/images/pest/moth.jpg"
-            },
-            "slug": {
-                id: 5,
-                explanation: "Ang mga slug ay katulad ng mga suso ngunit walang shell.",
-                image: "../../assets/images/pest/slug.jpg"
-            },
-            "earwig": {
-                id: 6,
-                explanation: "Ang mga earwig ay nocturnal na insekto na kumakain ng mga halaman.",
-                image: "../../assets/images/pest/earwig.jpg"
-            },
-            "grasshopper": {
-                id: 7 ,
-                explanation: "Ang mga grasshoppers ay mga insekto na kumakain ng halaman.",
-                image: "../../assets/images/pest/grasshopper.jpg"
-            },
-            "Caterpillar": {
-                id: 8,
-                explanation: "Ang mga caterpillar ay larvae ng mga paru-paro at moth.",
-                image: "../../assets/images/pest/caterpillar.jpg"
-            },
-            "earthworm": {
-                id: 9,
-                explanation: "Ang mga earthworm ay kapaki-pakinabang sa lupa para sa pag-aerate at decomposition.",
-                image: "../../assets/images/pest/earthworms.jpg"
-            },
-            "bettle": {
-                id: 10,
-                explanation: "Ang mga beetle ay maaaring makasira sa mga halaman sa pamamagitan ng pagkain ng mga bahagi nito.",
-                image: "../../assets/images/pest/beetle.jpg"
-            },
-            "ant": {
-                id: 11,
-                explanation: "Ang mga langgam ay sosyal na insekto na maaaring magdulot ng abala.",
-                image: "../../assets/images/pest/ants.jpg"
-            },
-            "bee": {
-                id: 12,
-                explanation: "Ang mga bubuyog ay mahalagang pollinators ngunit maaaring maging agresibo.",
-                image: "../../assets/images/pest/bees.jpg"
-            },
-            "borers": {
-                id: 13,
-                explanation: "Ang mga borer ay mga larvae na sumusubok pumasok sa mga puno.",
-                image: "../../assets/images/pest/borers.jpg"
-            },
-            "cane Grubs": {
-                id: 14,
-                explanation: "Ang mga cane grubs ay larvae ng beetles na kumakain sa ugat ng tubo.",
-                image: "../../assets/images/pest/cane_grubs.jpg"
-            },
-            "corn Earworm": {
-                id: 15,
-                explanation: "Ang mga corn earworms ay caterpillar na kumakain sa mga tenga ng mais.",
-                image: "../../assets/images/pest/corn_earworm.jpg"
-            },
-            "corn Leaf Aphid": {
-                id: 16,
-                explanation: "Ang mga corn leaf aphids ay sumususo ng katas mula sa mga halaman ng mais.",
-                image: "../../assets/images/pest/corn_leaf_aphid.jpg"
-            },
-            "cutworms": {
-                id: 16,
-                explanation: "Ang mga cutworms ay caterpillar na kumakain sa mga batang halaman.",
-                image: "../../assets/images/pest/cutworms.jpg"
-            },
-            "carly Shoot Borer": {
-                id: 17,
-                explanation: "Ang mga early shoot borers ay umaatake sa mga batang shoots ng tubo.",
-                image: "../../assets/images/pest/early_shoot_borer.jpg"
-            },
-            "fall Armyworm": {
-                id: 18,
-                explanation: "Ang mga fall armyworms ay caterpillar na sumisira sa mga tanim tulad ng mais.",
-                image: "../../assets/images/pest/fall_armyworm.jpg"
-            },
-        };
+        const labelDetails = {
+    "Undefined": {
+        id: 0,
+        explanation: "Ang peste ay hindi matukoy. Siguraduhin na malinaw ang larawan.",
+        image: "../../assets/images/pest/undefined.jpg"
+    },
+    "Wasp": {
+        id: 1,
+        explanation: "Ang mga wasps ay karaniwang mga predatoryong insekto.",
+        image: "../../assets/images/pest/wasp.jpg"
+    },
+    "Weevil": {
+        id: 2,
+        explanation: "Ang mga weevil ay mga beetle na kilala sa kanilang mahahabang pangil.",
+        image: "../../assets/images/pest/weevil.jpg"
+    },
+    "Snail": {
+        id: 3,
+        explanation: "Ang mga suso ay mabagal na molusko na madalas sumisira sa mga halaman.",
+        image: "../../assets/images/pest/snail.jpg"
+    },
+    "Moth": {
+        id: 4,
+        explanation: "Ang mga moth ay maaaring makapinsala sa mga tela at nakaimbak na produkto.",
+        image: "../../assets/images/pest/moth.jpg"
+    },
+    "Slug": {
+        id: 5,
+        explanation: "Ang mga slug ay katulad ng mga suso ngunit walang shell.",
+        image: "../../assets/images/pest/slug.jpg"
+    },
+    "Earwigs": {
+        id: 6,
+        explanation: "Ang mga earwig ay nocturnal na insekto na kumakain ng mga halaman.",
+        image: "../../assets/images/pest/earwig.jpg"
+    },
+    "Grasshopper": {
+        id: 7 ,
+        explanation: "Ang mga grasshoppers ay mga insekto na kumakain ng halaman.",
+        image: "../../assets/images/pest/grasshopper.jpg"
+    },
+    "Catterpillar": {
+        id: 8,
+        explanation: "Ang mga caterpillar ay larvae ng mga paru-paro at moth.",
+        image: "../../assets/images/pest/caterpillar.jpg"
+    },
+    "Earthworms": {
+        id: 9,
+        explanation: "Ang mga earthworm ay kapaki-pakinabang sa lupa para sa pag-aerate at decomposition.",
+        image: "../../assets/images/pest/earthworms.jpg"
+    },
+    "Bettles": {
+        id: 10,
+        explanation: "Ang mga beetle ay maaaring makasira sa mga halaman sa pamamagitan ng pagkain ng mga bahagi nito.",
+        image: "../../assets/images/pest/beetle.jpg"
+    },
+    "Ants": {
+        id: 11,
+        explanation: "Ang mga langgam ay sosyal na insekto na maaaring magdulot ng abala.",
+        image: "../../assets/images/pest/ants.jpg"
+    },
+    "Bees": {
+        id: 12,
+        explanation: "Ang mga bubuyog ay mahalagang pollinators ngunit maaaring maging agresibo.",
+        image: "../../assets/images/pest/bees.jpg"
+    },
+    "Borers": {
+        id: 13,
+        explanation: "Ang mga borer ay mga larvae na sumusubok pumasok sa mga puno.",
+        image: "../../assets/images/pest/borers.jpg"
+    },
+    "Cane Grubs": {
+        id: 14,
+        explanation: "Ang mga cane grubs ay larvae ng beetles na kumakain sa ugat ng tubo.",
+        image: "../../assets/images/pest/cane_grubs.jpg"
+    },
+    "Corn Earworm": {
+        id: 15,
+        explanation: "Ang mga corn earworms ay caterpillar na kumakain sa mga tenga ng mais.",
+        image: "../../assets/images/pest/corn_earworm.jpg"
+    },
+    "Corn Leaf Aphid": {
+        id: 16,
+        explanation: "Ang mga corn leaf aphids ay sumususo ng katas mula sa mga halaman ng mais.",
+        image: "../../assets/images/pest/corn_leaf_aphid.jpg"
+    },
+    "Cutworms": {
+        id: 16,
+        explanation: "Ang mga cutworms ay caterpillar na kumakain sa mga batang halaman.",
+        image: "../../assets/images/pest/cutworms.jpg"
+    },
+    "Early Shoot Borer": {
+        id: 17,
+        explanation: "Ang mga early shoot borers ay umaatake sa mga batang shoots ng tubo.",
+        image: "../../assets/images/pest/early_shoot_borer.jpg"
+    },
+    "Fall armyworm": {
+        id: 18,
+        explanation: "Ang mga fall armyworms ay caterpillar na sumisira sa mga tanim tulad ng mais.",
+        image: "../../assets/images/pest/fall_armyworm.jpg"
+    },
+};
 
 
 
